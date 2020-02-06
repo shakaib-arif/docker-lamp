@@ -4,8 +4,8 @@ apt-get update && apt-get -y upgrade
 # install required packages for LAMP and supporting packages
 apt-get install -y software-properties-common dirmngr vim net-tools sudo wget curl apt-utils
 apt-get install -y apache2 mariadb-server
-# install php and its extensions
-apt-get install -y php php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip libapache2-mod-php
+
+
 # start mysql and sleep for a while, so database can be created
 service mysql start &
 sleep 5

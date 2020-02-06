@@ -1,10 +1,14 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 # disable package prompt interaction
 ENV DEBIAN_FRONTEND noninteractive
 # install required packages
 ADD ./setup.sh /setup.sh
 RUN chmod +x /setup.sh
 RUN /setup.sh
+# install php and its extensions from source compilation
+ADD install-php.sh /
+RUN chmod +x install-php.sh
+RUN /install-php.sh
 # install and configure wordpress
 RUN wget https://wordpress.org/latest.tar.gz
 RUN tar xzf latest.tar.gz

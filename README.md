@@ -56,3 +56,4 @@ https://www.linuxjournal.com/content/bash-trap-command
 
 https://linuxhint.com/wait_command_linux/
 
+https://gist.github.com/root-talis/40c4936bf0287237839ccd3fdfdaec28

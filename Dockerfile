@@ -15,6 +15,8 @@ RUN mv /var/www/html/wordpress/wp-config-sample.php /var/www/html/wordpress/wp-c
 RUN sed -i -e 's/database_name_here/wordpress_db/g' /var/www/html/wordpress/wp-config.php
 RUN sed -i -e 's/username_here/wordpress_user/g' /var/www/html/wordpress/wp-config.php
 RUN sed -i -e 's/password_here/MyPassword/g' /var/www/html/wordpress/wp-config.php
+# creating apache v-host for wordpress
+ADD ./wordpress.conf /etc/apache2/sites-available/wordpress.conf
 # update apache configuration
 RUN a2enmod rewrite
 RUN a2dissite 000-default.conf

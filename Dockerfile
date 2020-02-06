@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 # disable package prompt interaction
 ENV DEBIAN_FRONTEND noninteractive
 # install required packages
@@ -24,6 +24,10 @@ RUN ln -s /etc/apache2/sites-available/wordpress.conf /etc/apache2/sites-enabled
 # install runit (init scheme)
 RUN apt-get update && apt-get install -y runit
 RUN mkdir -p /etc/runit
+ADD runit-1.sh /etc/runit/1
+ADD runit-2.sh /etc/runit/2
+ADD runit-3.sh /etc/runit/3
+RUN chmod +x -R /etc/runit/*
 # configure apache service by using runit directive
 RUN mkdir -p /etc/service/my_apache/
 RUN echo "#!/bin/bash\necho "start apache"\n/etc/init.d/apache2 start" > /etc/service/my_apache/run

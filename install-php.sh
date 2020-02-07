@@ -93,7 +93,7 @@ git checkout "php-$PHP_VERSION"
 # Setup Kubuntu with other dependencies for PHP 7. Add any missing ones from
 # the configure script.
 sudo apt-get update
-sudo apt-get install libldap2-dev \
+sudo apt-get install -y libldap2-dev \
   libldap-2.4-2 \
   libtool libtool-doc \
   libzip-dev \

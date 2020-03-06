@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 # disable package prompt interaction
 ENV DEBIAN_FRONTEND noninteractive
 # install required packages

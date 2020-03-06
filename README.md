@@ -11,8 +11,8 @@ You can run the contianer by choosing any method of your preference.
 
 Pull the image from docker hub and run its container.
 ```bash
-docker pull shakaib/docker-lamp
-docker run -itd --name docker-lamp -p 8080:80 shakaib/docker-lamp
+docker pull shakaib/docker-lamp:18.04
+docker run -itd --name docker-lamp -p 8080:80 shakaib/docker-lamp:18.04
 docker exec -it docker-lamp bash
 # in the container terminal check the process
 ps aux
@@ -20,7 +20,7 @@ ps aux
 
 This command will downlaod the image from docker hub and create its container.
 ```bash
-docker run -itd --name docker-lamp -p 8080:80 shakaib/docker-lamp /boot
+docker run -itd --name docker-lamp -p 8080:80 shakaib/docker-lamp:18.04 /boot
 docker exec -it docker-lamp bash
 # in the container terminal check the process
 ps aux
@@ -37,8 +37,8 @@ Open your terminal and follow these instructions to checkout the source code and
 cd ~
 git clone https://github.com/shakaib-arif/docker-lamp.git
 cd docker-lamp
-docker build -t shakaib/docker-lamp .
-docker run -itd --name docker-lamp -p 8080:80 shakaib/docker-lamp
+docker build -t docker-lamp:18.04 .
+docker run -itd --name docker-lamp -p 8080:80 docker-lamp:18.04
 docker exec -it docker-lamp bash
 # in the container terminal check the process
 ps aux
